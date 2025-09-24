@@ -1,0 +1,12 @@
+{
+    "name": "resolve-google-sheets-metadata-plugin",
+    "version": "0.1.0",
+    "description": "Sync clip metadata from Google Sheets",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "dependencies": {
+        "googleapis": "^131.0.0"
+    }
+}

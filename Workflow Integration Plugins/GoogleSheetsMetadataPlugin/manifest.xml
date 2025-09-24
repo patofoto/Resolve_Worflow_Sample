@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BlackmagicDesign>
+    <Plugin>
+        <Id>com.blackmagicdesign.resolve.googlesheetsmetadata</Id>
+        <Name>Google Sheets Metadata Sync</Name>
+        <Version>0.1</Version>
+        <Description>Apply clip metadata from a Google Sheet</Description>
+        <FilePath>main.js</FilePath>
+    </Plugin>
+</BlackmagicDesign>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Google Sheets Metadata Sync</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <img src="img/logo.png" alt="Resolve logo" class="logo" />
+        <div>
+            <h1>Google Sheets Metadata Sync</h1>
+            <p class="subtitle">Pull clip metadata from a Google Sheet and push it into the active Resolve project.</p>
+        </div>
+    </header>
+
+    <section class="card">
+        <h2>Google Sheets Source</h2>
+        <div class="field-group">
+            <label for="credentialsPath">Service account JSON</label>
+            <div class="inline-input">
+                <input type="text" id="credentialsPath" placeholder="/path/to/service-account.json">
+                <button id="browseCredentials" class="primary">Browse…</button>
+            </div>
+            <small>Service account must have viewer access to the sheet.</small>
+        </div>
+        <div class="field-group">
+            <label for="spreadsheetId">Spreadsheet ID</label>
+            <input type="text" id="spreadsheetId" placeholder="1Abc123exampleId" />
+        </div>
+        <div class="field-group">
+            <label for="range">Range (including header row)</label>
+            <input type="text" id="range" placeholder="Sheet1!A1:G" />
+        </div>
+        <div class="actions">
+            <button id="loadSheetBtn" class="primary">Load Sheet</button>
+        </div>
+    </section>
+
+    <section id="mappingSection" class="card hidden">
+        <h2>Column Mapping</h2>
+        <div class="field-group">
+            <label for="filenameColumn">Filename column</label>
+            <select id="filenameColumn"></select>
+        </div>
+        <p class="hint">Enable the columns you want to push to Resolve and adjust the target metadata key if needed.</p>
+        <table id="mappingTable">
+            <thead>
+                <tr>
+                    <th>Use</th>
+                    <th>Sheet Column</th>
+                    <th>Resolve Metadata Key</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div class="actions">
+            <button id="applyMetadataBtn" class="primary">Apply Metadata to Matching Clips</button>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Status</h2>
+        <textarea id="logOutput" readonly></textarea>
+    </section>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
